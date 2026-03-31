@@ -79,4 +79,4 @@ C'est un requete simple pour creer une table Produits dans la base de donnees cr
 
 ## PARTIES DES FICHIERS 
 - ## FICHIER comfig/database.php :
-
+C'est le 1er dans lequel on ecrit. On vas l'inclure dans toutes les pages qui ONT BESOIN D'ACCEDER A LA BASE DE DONNEES. On utilise PDO (cest une facon moderne et securisee de communiquer avec MySQL en PHP2)
