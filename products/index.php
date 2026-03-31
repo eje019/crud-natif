@@ -3,8 +3,8 @@ require_once '../config/database.php';
 require_once '../includes/header.php';
 
 // Récupère tous les produits, du plus récent au plus ancien
-$stmt = $pdo->query("SELECT * FROM products ORDER BY created_at DESC");
-$products = $stmt->fetchAll();
+$stmt = $pdo->query("SELECT * FROM produits ORDER BY created_at DESC");
+$produits = $stmt->fetchAll();
 ?>
 
 <div class="d-flex justify-content-between align-items-center mb-4">
@@ -17,14 +17,14 @@ $products = $stmt->fetchAll();
     <div class="col-md-4">
         <div class="card text-center">
             <div class="card-body">
-                <h5 class="card-title"><?= count($products) ?></h5>
+                <h5 class="card-title"><?= count($produits) ?></h5>
                 <p class="card-text text-muted">Produits au total</p>
             </div>
         </div>
     </div>
 </div>
 
-<?php if (empty($products)): ?>
+<?php if (empty($produits)): ?>
     <!-- Message si aucun produit n'existe encore -->
     <div class="alert alert-info">
         Aucun produit pour l'instant.
@@ -46,11 +46,11 @@ $products = $stmt->fetchAll();
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($products as $product): ?>
+                    <?php foreach ($produits as $product): ?>
                         <tr>
                             <td><?= $product['id'] ?></td>
-                            <td><?= htmlspecialchars($product['name']) ?></td>
-                            <td><?= number_format($product['price'], 2, ',', ' ') ?> €</td>
+                            <td><?= htmlspecialchars($product['nom']) ?></td>
+                            <td><?= number_format($product['prix'], 2, ',', ' ') ?> €</td>
                             <td><?= date('d/m/Y', strtotime($product['created_at'])) ?></td>
                             <td>
                                 <a href="show.php?id=<?= $product['id'] ?>" class="btn btn-sm btn-info">Voir</a>
@@ -59,7 +59,7 @@ $products = $stmt->fetchAll();
                                 <button
                                     class="btn btn-sm btn-danger btn-delete"
                                     data-id="<?= $product['id'] ?>"
-                                    data-name="<?= htmlspecialchars($product['name']) ?>"
+                                    data-nom="<?= htmlspecialchars($product['nom']) ?>"
                                 >
                                     Supprimer
                                 </button>
@@ -73,7 +73,7 @@ $products = $stmt->fetchAll();
 
     <!-- Formulaire caché pour la suppression (expliqué plus bas) -->
     <form id="form-delete" action="delete.php" method="POST" style="display:none;">
-        <input type="hidden" name="id" id="delete-id">
+        <input type="hidden" nom="id" id="delete-id">
     </form>
 <?php endif; ?>
 
