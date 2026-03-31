@@ -25,25 +25,25 @@ Voici comment on va organiser les fichiers :
 crud/
 │
 ├── config/
-│   └── database.php        ← connexion à la base de données
+│ └── database.php # Connexion à la base de données
 │
 ├── includes/
-│   ├── header.php          ← en-tête commune à toutes les pages
-│   └── footer.php          ← pied de page commun
+│ ├── header.php # En-tête commune à toutes les pages
+│ └── footer.php # Pied de page commun
 │
 ├── products/
-│   ├── index.php           ← liste tous les produits
-│   ├── create.php          ← formulaire d'ajout
-│   ├── store.php           ← traitement de l'ajout
-│   ├── show.php            ← détail d'un produit
-│   ├── edit.php            ← formulaire de modification
-│   ├── update.php          ← traitement de la modification
-│   └── delete.php          ← traitement de la suppression
+│ ├── index.php # Liste tous les produits
+│ ├── create.php # Formulaire d'ajout
+│ ├── store.php # Traitement de l'ajout
+│ ├── show.php # Détail d'un produit
+│ ├── edit.php # Formulaire de modification
+│ ├── update.php # Traitement de la modification
+│ └── delete.php # Traitement de la suppression
 │
 ├── assets/
-│   ├── css/
-│   │   └── style.css       ← styles personnalisés
-│   └── js/
-│       └── app.js          ← scripts JavaScript
+│ ├── css/
+│ │ └── style.css # Styles personnalisés
+│ └── js/
+│ └── app.js # Scripts JavaScript
 │
-└── index.php               ← page d'accueil (redirige vers products/)
+└── index.php # Page d'accueil (redirige vers products/)
