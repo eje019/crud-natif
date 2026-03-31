@@ -51,3 +51,32 @@ crud/
 │
 └── index.php               # Page d'accueil (redirige vers products/)
 ```
+
+Il faut placer ce dossier crud dans le dossier htdocs de XAMPP (explorateur de fichiers-> dossier de XAMP -> dossier htdocs)
+
+OK ON EST BONS.
+
+## 1 - CREATION DE LABASE DE DONNEES
+- D'abord il faut ouvrir son navigateur et aller sur http://localhost/phpmyadmin (il y a la page d'accueil de xamp la)
+
+- Ensuite il faut creer une base de domnnee appelee par exemple crud et apres ca aller dans l'onglet SQL et executer la requete qui suit :
+
+CREATE TABLE Produits (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(255) NOT NULL,
+    description TEXT,
+    prix DECIMAL(10, 2) NOT NULL, 
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+C'est un requete simple pour creer une table Produits dans la base de donnees crud (ou tout autre nom ca depend) avec :
+- id — un numéro unique attribué automatiquement à chaque produit
+- nom — le nom du produit
+- description — une description du produit 
+- prix — le prix
+- created_at et updated_at — les dates de création et modification, remplies automatiquement
+
+## PARTIES DES FICHIERS 
+- ## FICHIER comfig/database.php :
+
