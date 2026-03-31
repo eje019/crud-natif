@@ -5,7 +5,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+< lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <!-- Notre fichier CSS personnalisé -->
     <link href="/mon-crud/assets/css/style.css" rel="stylesheet">
 </head>
-<body>
+<>
 
     <!-- Barre de navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
@@ -28,7 +28,7 @@ if (session_status() === PHP_SESSION_NONE) {
         </div>
     </nav>
 
-    <div class="container">
+    < class="container">
 
         <!-- Affichage des messages de succès ou d'erreur -->
         <?php if (isset($_SESSION['success'])): ?>
@@ -46,7 +46,4 @@ if (session_status() === PHP_SESSION_NONE) {
             </div>
             <?php unset($_SESSION['error']); ?>
         <?php endif; ?>
-    </div>
-</body>
-</html>
 
