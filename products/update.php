@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-$id          = (int) ($_POST['id'] ?? 0);
+$id         = (int) ($_POST['id'] ?? 0);
 $nom        = trim($_POST['nom'] ?? '');
 $description = trim($_POST['description'] ?? '');
 $prix       = trim($_POST['prix'] ?? '');

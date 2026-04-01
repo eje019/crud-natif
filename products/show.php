@@ -68,13 +68,13 @@ if (!$produit) {
     <button
         class="btn btn-danger btn-delete"
         data-id="<?= $produit['id'] ?>"
-        data-nom="<?= htmlspecialchars($produit['nom']) ?>"
+        data-name="<?= htmlspecialchars($produit['nom']) ?>"
     >
         Supprimer ce produit
     </button>
     <form id="form-delete" action="delete.php" method="POST" style="display:none;">
-        <input type="hidden" nom="id" id="delete-id">
+        <input type="hidden" name="id" id="delete-id">
     </form>
 </div>
 
-<?php require_once '../includes/footer.php'; ?>
+<?php require_once '../includes/footer.php'; ?> 

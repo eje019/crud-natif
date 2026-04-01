@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 // --- Récupération et nettoyage des données ---
 $nom        = trim($_POST['nom'] ?? '');
 $description = trim($_POST['description'] ?? '');
-$price       = trim($_POST['price'] ?? '');
+$prix       = trim($_POST['prix'] ?? '');
 
 // --- Validation ---
 $errors = [];
@@ -22,16 +22,16 @@ if (empty($nom)) {
     $errors['nom'] = 'Le nom doit contenir au moins 2 caractères.';
 }
 
-if (empty($price)) {
-    $errors['price'] = 'Le prix est obligatoire.';
-} elseif (!is_numeric($price) || $price < 0) {
-    $errors['price'] = 'Le prix doit être un nombre positif.';
+if (empty($prix)) {
+    $errors['prix'] = 'Le prix est obligatoire.';
+} elseif (!is_numeric($prix) || $prix < 0) {
+    $errors['prix'] = 'Le prix doit être un nombre positif.';
 }
 
 // S'il y a des erreurs, on retourne au formulaire avec les erreurs et les anciennes valeurs
 if (!empty($errors)) {
     $_SESSION['errors'] = $errors;
-    $_SESSION['old']    = ['nom' => $nom, 'description' => $description, 'price' => $price];
+    $_SESSION['old']    = ['nom' => $nom, 'description' => $description, 'prix' => $prix];
     header('Location: create.php');
     exit;
 }
@@ -46,7 +46,7 @@ $stmt = $pdo->prepare("
 $stmt->execute([
     ':nom'        => $nom,
     ':description' => $description,
-    ':prix'       => $price,
+    ':prix'       => $prix,
 ]);
 
 // Récupère l'id du produit qui vient d'être créé

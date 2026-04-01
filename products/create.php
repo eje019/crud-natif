@@ -18,17 +18,17 @@ unset($_SESSION['old'], $_SESSION['errors']);
 
             <!-- Champ Nom -->
             <div class="mb-3">
-                <label for="name" class="form-label">Nom du produit <span class="text-danger">*</span></label>
+                <label for="nom" class="form-label">Nom du produit <span class="text-danger">*</span></label>
                 <input
                     type="text"
-                    class="form-control <?= isset($errors['name']) ? 'is-invalid' : '' ?>"
-                    id="name"
-                    name="name"
-                    value="<?= htmlspecialchars($old['name'] ?? '') ?>"
+                    class="form-control <?= isset($errors['nom']) ? 'is-invalid' : '' ?>"
+                    id="nom"
+                    name="nom"
+                    value="<?= htmlspecialchars($old['nom'] ?? '') ?>"
                     placeholder="Ex : Chaise de bureau"
                 >
-                <?php if (isset($errors['name'])): ?>
-                    <div class="invalid-feedback"><?= $errors['name'] ?></div>
+                <?php if (isset($errors['nom'])): ?>
+                    <div class="invalid-feedback"><?= $errors['nom'] ?></div>
                 <?php endif; ?>
             </div>
 
@@ -49,19 +49,19 @@ unset($_SESSION['old'], $_SESSION['errors']);
 
             <!-- Champ Prix -->
             <div class="mb-3">
-                <label for="price" class="form-label">Prix (€) <span class="text-danger">*</span></label>
+                <label for="prix" class="form-label">Prix (€) <span class="text-danger">*</span></label>
                 <input
                     type="number"
                     step="0.01"
                     min="0"
-                    class="form-control <?= isset($errors['price']) ? 'is-invalid' : '' ?>"
-                    id="price"
-                    name="price"
-                    value="<?= htmlspecialchars($old['price'] ?? '') ?>"
+                    class="form-control <?= isset($errors['prix']) ? 'is-invalid' : '' ?>"
+                    id="prix"
+                    name="prix"
+                    value="<?= htmlspecialchars($old['prix'] ?? '') ?>"
                     placeholder="Ex : 49.99"
                 >
-                <?php if (isset($errors['price'])): ?>
-                    <div class="invalid-feedback"><?= $errors['price'] ?></div>
+                <?php if (isset($errors['prix'])): ?>
+                    <div class="invalid-feedback"><?= $errors['prix'] ?></div>
                 <?php endif; ?>
             </div>
 

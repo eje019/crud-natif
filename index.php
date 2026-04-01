@@ -1,3 +1,3 @@
 <?php
-header('Location: /porduits/products/');
+header('Location: /Store/products/');
 exit;
