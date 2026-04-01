@@ -1,23 +1,28 @@
 <?php
 
-$host     = 'localhost';
-$dbname   = 'produits';
-$username = 'root';
-$password = '';  // Mot de passe vide par défaut sur XAMPP
+//les informations de connexion a la BDD
+$host = "localhost";
+$dbname = "Store";
+$username = "root";
+$password=""; // mot de passe vide par défaut sur XAMP
+
 
 try {
-    $pdo = new PDO(
-        "mysql:host=$host;dbname=$dbname;charset=utf8",
-        $username,
-        $password
-    );
+//connexion avec PDO
+$pdo = new PDO ("mysql:host = $host, dbname = $dbname, charset=uft-8",
+$username,
+$password
+);
 
-    // Demande à PHP d'afficher les erreurs SQL comme des exceptions
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Les résultats des requêtes seront des tableaux associatifs
-    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+//on demande a PDO de nous signaler toutes les erreurs SQl en mode exception
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-} catch (PDOException $e) {
-    die("Erreur de connexion : " . $e->getMessage());
+//on demande a PDO de nous retourner les resultats des requetes sous forme de tablreaux associatifs 
+$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC); 
 }
+
+catch(PDOEXCEPTION $e){
+    die("Erreur de connexion a la base de donnees : ". $e->getMessage());
+}
+?>

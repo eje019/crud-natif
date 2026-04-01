@@ -91,7 +91,9 @@ C'est un requete simple pour creer une table Produits dans la base de donnees cr
   C'est le 1er dans lequel on ecrit. On vas l'inclure dans toutes les pages qui ONT BESOIN D'ACCEDER A LA BASE DE DONNEES. On utilise PDO (cest une facon moderne et securisee de communiquer avec MySQL en PHP)
 
 Voir : /config/database.php
-Ce fichier ne fait qu'une chose la connexion a MySQL 
+Ce fichier ne fait qu'une chose la connexion a MySQL.
+On garde ce fichier à part pour pouvoir le réutiliser partout.
+
 Dans ce fichier la il doit y avoir :
 - Les informations de connexion a la base de donnees : le nom de la base de donnees ; le nom du serveur (XAMP utilise localhost); l'utilisateur par defaut de XAMP et son mot de passe sur xamp.
 
@@ -103,3 +105,4 @@ _Dans le try {} :_
 _Dans le catch() {} :_
 - Si la connexion a la BDD echoue on affiche un messsage et on arrete tout 
 
+- ## FICHIER includes/header.php :
