@@ -13,17 +13,17 @@ if (session_status() === PHP_SESSION_NONE) {
     <!-- Bootstrap pour le style -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Notre fichier CSS personnalisé -->
-    <link href="/mon-crud/assets/css/style.css" rel="stylesheet">
+    <link href="/Store/assets/css/style.css" rel="stylesheet">
 </head>
 <body>
 
 <!-- Barre de navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
     <div class="container">
-        <a class="navbar-brand" href="/porduits/">Mon CRUD</a>
+        <a class="navbar-brand" href="/Store/">Mon CRUD</a>
         <div class="navbar-nav">
-            <a class="nav-link" href="/porduits/products/">Produits</a>
-            <a class="nav-link" href="/porduits/products/create.php">Ajouter</a>
+            <a class="nav-link" href="/Store/products/">Produits</a>
+            <a class="nav-link" href="/Store/products/create.php">Ajouter</a>
         </div>
     </div>
 </nav>
