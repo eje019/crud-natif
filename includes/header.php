@@ -1,13 +1,15 @@
 <?php
-// Démarre la session pour pouvoir afficher des messages entre pages
-if (session_status() === PHP_SESSION_NONE) {
+// On demarre la session pour pouvoir afficher des messages entre pages
+// si une session nest pas deja active on en active une pour pouvoir utiliser $_SESSION
+if (session_status() == PHP_SESSION_none){
     session_start();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8">+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon CRUD PHP</title>
     <!-- Bootstrap pour le style -->
